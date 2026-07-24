@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donor List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 85%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #2980b9;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎁 Donor Details</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Donor ID</th>
+            <th>Animal Supported</th>
+            <th>Phone</th>
+            <th>Age</th>
+        </tr>
+
+        {% for d in doners %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.doner_id }}</td>
+            <td>{{ d.animal }}</td>
+            <td>{{ d.phone }}</td>
+            <td>{{ d.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="footer">
+        Zoo Management System © {{ year }}
+    </div>
+
+</body>
+</html>

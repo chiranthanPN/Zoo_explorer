@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 34px;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐾 Animal Details</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Food</th>
+            <th>Habitat</th>
+        </tr>
+
+        {% for a in animals %}
+        <tr>
+            <td>{{ a.name }}</td>
+            <td>{{ a.age }}</td>
+            <td>{{ a.food }}</td>
+            <td>{{ a.habitat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="footer">
+        Zoo Management System © {{ year }}
+    </div>
+
+</body>
+</html>
